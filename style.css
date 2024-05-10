@@ -47,7 +47,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 65%;
+    height: 87%;
     border-bottom: 1px solid #333333;
     overflow-y: auto;
 }
@@ -129,7 +129,7 @@ ol {
     width: 100%;
     height: 88%;
     background-color: #1C1C1C;
-    padding-top: 5%;
+    padding-top: 2%;
     padding-left: 15%;
     padding-right: 17%;
     overflow-y: auto;
@@ -176,6 +176,7 @@ ol {
 .mensagem{
     display: flex;
     margin-bottom: 4%;
+
 }
 
 #mensagem-input{
@@ -202,3 +203,101 @@ ol {
     max-width: 100%;
     word-break: break-all;
 }
+
+
+#configs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 3rem;
+}
+
+#usuario::before {
+    content: " ";
+    background-image: var(--background-image);
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+    display: inline-block;
+    width: 20px; 
+    height: 20px;
+}
+
+#usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    top: 0.5rem;
+    width: 15rem;
+    height: 2rem;
+    font-size: 1.1rem;
+    border-radius: 100px;
+
+}
+
+#config-user{
+    position: absolute;
+    left: 1rem;
+    background-color: #333333;
+    color: white;
+    bottom: 3rem;
+    width: 21rem;
+    height: 7rem;
+    border-radius: 8px;
+    display: none;
+}
+
+
+#config-user div{
+    position: relative;
+    top: 20%;
+    left: 8%;
+    height: 2rem;
+    display: flex;
+}
+
+#divNome{
+    margin-bottom: 0.8rem;
+}
+
+#nomeUsuario{
+    height: 1.6rem;
+    margin-left: 1.9rem;
+    margin-right: 1rem;
+    background-color: #1C1C1C;
+    color: white;
+    border: solid 0px;
+    border-radius: 5px;
+}
+
+#imagemUsuario{
+    height: 1.6rem;
+    margin-left: 0.7rem;
+    margin-right: 1rem;
+    background-color: #1C1C1C;
+    border: solid 0px;
+    color: white;
+    border-radius: 5px;
+}
+
+.buton{
+    border: solid 0px;
+    background-image: url('images/Vector.png');
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-color: transparent;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#usuario:hover{
+    background-color: #212121;
+}
+

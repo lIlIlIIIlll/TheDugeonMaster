@@ -1,5 +1,9 @@
 let chatList = document.getElementById('chat-list');
 let conversa = document.getElementById('historico');
+let useroption = document.getElementById('usuario');
+let username = "Default";
+let userImage = "images/usuario.png";
+useroption.style.setProperty("--background-image","url(images/usuario.png)");
 
 
 function createChat(name){
@@ -63,12 +67,40 @@ function createMessage(username,img,content){
 
 let addChat = document.getElementById('NC');
 let enviarBotao = document.getElementById('enviar');
+let setNameBtn = document.getElementById('btnName');
+let setImageBtn = document.getElementById('btnImg');
+
+useroption.addEventListener('click',()=>{
+    let userChanges = document.getElementById('config-user');
+    if(useroption.classList.contains('selected')){
+        useroption.classList.remove('selected');
+        userChanges.style.display = 'none';
+    } else{
+        userChanges.style.display = "block";
+        useroption.classList.add('selected');
+    }
+});
+
+setNameBtn.addEventListener('click',()=>{
+    let input = document.getElementById('nomeUsuario');
+    username = input.value;
+    useroption.innerText = input.value;
+    input.value = "";
+});
+
+setImageBtn.addEventListener('click',()=>{
+    let input = document.getElementById('imagemUsuario');
+    userImage = input.value;
+    useroption.style.setProperty("--background-image",`url(${input.value})`);
+    input.value = "";
+});
+
 
 enviarBotao.addEventListener('click',()=>{
     let textinhoEL = document.getElementById('mensagem-input');
     let textinho = textinhoEL.value;
     if(textinho.trim() !== ""){
-        conversa.append(createMessage("Luth","https://i.pinimg.com/236x/c5/ef/e9/c5efe9990be2f5b219b309f5505eaf43.jpg",textinho));
+        conversa.append(createMessage(username,userImage,textinho));
         textinhoEL.value = "";
     }
 });
